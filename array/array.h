@@ -1,5 +1,5 @@
-#ifndef _ARRAY_H_
-#define _ARRAY_H_
+#ifndef _BLUE_ARRAY_H_
+#define _BLUE_ARRAY_H_
 
 #include <vector>
 
@@ -49,4 +49,4 @@ int Solution::removeElementV2(std::vector<int>& nums, int val) {
     }
 }
 
-#endif // _ARRAY_H_
+#endif // _BLUE_ARRAY_H_
