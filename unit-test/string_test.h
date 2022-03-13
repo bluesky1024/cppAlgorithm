@@ -5,7 +5,7 @@
 #include <gmock/gmock.h>
 #include <vector>
 
-#include "../string/string.h"
+#include "../src/string/string.h"
 
 void string_is_palindrome(blue_algorithm::string::Solution *s) {
     ASSERT_TRUE(s->isPalindrome(121));

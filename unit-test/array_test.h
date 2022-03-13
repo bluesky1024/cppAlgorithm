@@ -5,7 +5,7 @@
 #include <gmock/gmock.h>
 #include <vector>
 
-#include "../array/array.h"
+#include "../src/array/array.h"
 
 void array_remove_element(blue_algorithm::array::Solution *s) {
     std::vector<int> in1 = {1,2,6,3,4,6,5};

@@ -1,24 +1,16 @@
-#ifndef _BLUE_STRING_H_
-#define _BLUE_STRING_H_
-
+#include <stdio.h>
 #include <vector>
 
-namespace blue_algorithm {
-    namespace string {
+#include "string.h"
 
-class Solution{
-    private:
-    /* data */
-public:
-    // Solution();
-    // ~Solution();
+blue_algorithm::string::Solution::Solution(){
+}
 
-    /* problem */
-    // 回文数
-    bool isPalindrome(int x);
-};
+blue_algorithm::string::Solution::~Solution(){
+}
 
-bool Solution::isPalindrome(int x) {
+
+bool blue_algorithm::string::Solution::isPalindrome(int x) {
     if ( x < 0 ) {
         return false;
     }
@@ -39,9 +31,3 @@ bool Solution::isPalindrome(int x) {
     }
     return true;
 }
-
-
-    }
-}
-
-#endif

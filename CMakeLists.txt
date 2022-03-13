@@ -19,16 +19,18 @@ FetchContent_MakeAvailable(GoogleTest)
 # 开启 test
 enable_testing()
 
-# 要测试的文件头
+# 文件头
 set(Headers
     cpp-algorithm.h
 )
 
-# 要测试的源文件
+# 源文件
 set(Sources
     cpp-algorithm.cpp
 )
 
-add_library(${this} STATIC ${Sources} ${Headers})
+add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(${PROJECT_SOURCE_DIR}/unit-test)
 
-add_subdirectory(unit-test)
+add_executable(${this} ${Sources} ${Headers})
+target_link_libraries(${this} blue-src)
