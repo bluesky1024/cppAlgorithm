@@ -13,9 +13,9 @@ TEST(unit_test_suite_name,first_demo) {
 }
 
 TEST(unit_test_suite_name,array_test) {
-    array_test();
+    testArray();
 }
 
 TEST(unit_test_suite_name,string_test) {
-    string_test();
+    testString();
 }

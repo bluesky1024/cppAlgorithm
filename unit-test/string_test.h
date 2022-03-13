@@ -7,16 +7,16 @@
 
 #include "../src/string/string.h"
 
-void string_is_palindrome(blue_algorithm::string::Solution *s) {
+void stringIsPalindrome(blue_algorithm::string::Solution *s) {
     ASSERT_TRUE(s->isPalindrome(121));
     ASSERT_FALSE(s->isPalindrome(-121));
     ASSERT_FALSE(s->isPalindrome(10));
 }
 
-void string_test() {
+void testString() {
     blue_algorithm::string::Solution s = blue_algorithm::string::Solution();
 
-    string_is_palindrome(&s);
+    stringIsPalindrome(&s);
 }
 
 #endif // _STRING_TEST_H_

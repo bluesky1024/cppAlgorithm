@@ -7,7 +7,7 @@
 
 #include "../src/array/array.h"
 
-void array_remove_element(blue_algorithm::array::Solution *s) {
+void arrayRemoveElement(blue_algorithm::array::Solution *s) {
     std::vector<int> in1 = {1,2,6,3,4,6,5};
     ASSERT_EQ(s->removeElementV1(in1,6),5);
     in1.erase(in1.begin()+5,in1.end());
@@ -21,10 +21,23 @@ void array_remove_element(blue_algorithm::array::Solution *s) {
     EXPECT_THAT(in2, ::testing::ContainerEq(out2));
 }
 
-void array_test() {
+void arraySearchInsert(blue_algorithm::array::Solution *s) {
+    std::vector<int> in1 = {1,3,5,6};
+    ASSERT_EQ(s->searchInsert(in1,5),2);
+    ASSERT_EQ(s->searchInsert(in1,2),1);
+    ASSERT_EQ(s->searchInsert(in1,7),4);
+    ASSERT_EQ(s->searchInsert(in1,0),0);
+
+    std::vector<int> in2 = {1};
+    ASSERT_EQ(s->searchInsert(in2,0),0);
+}
+
+void testArray() {
     blue_algorithm::array::Solution s = blue_algorithm::array::Solution();
 
-    array_remove_element(&s);
+    arrayRemoveElement(&s);
+
+    arraySearchInsert(&s);
 
     ASSERT_TRUE(true);
 }

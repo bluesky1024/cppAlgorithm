@@ -32,3 +32,21 @@ int blue_algorithm::array::Solution::removeElementV2(std::vector<int>& nums, int
     }
     return left;
 }
+
+int blue_algorithm::array::Solution::searchInsert(std::vector<int>& nums, int target) {
+    int head = 0;
+    int tail = nums.size()-1;
+    for (;head<=tail;){
+        int mid = (head+tail) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        }
+        if (nums[mid] < target) {
+            head = mid+1;
+        }
+        if (nums[mid] > target) {
+            tail = mid-1;
+        }
+    }
+    return head;
+}
