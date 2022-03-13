@@ -1,10 +1,10 @@
-#ifndef _BLUE_STRING_H_
-#define _BLUE_STRING_H_
+#ifndef _BLUE_STR_H_
+#define _BLUE_STR_H_
 
 #include <vector>
 
 namespace blue_algorithm {
-    namespace string {
+    namespace str {
 
 class Solution{
     private:
@@ -21,4 +21,4 @@ public:
     }
 }
 
-#endif
+#endif // _BLUE_STR_H_

@@ -5,6 +5,7 @@ project(${this})
 
 # 源文件
 aux_source_directory(array array_src)
-aux_source_directory(string string_src)
+aux_source_directory(str str_src)
+aux_source_directory(tree tree_src)
 
-add_library(${this} STATIC ${array_src} ${string_src})
+add_library(${this} STATIC ${array_src} ${str_src} ${tree_src})

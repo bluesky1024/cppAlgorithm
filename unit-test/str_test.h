@@ -5,16 +5,16 @@
 #include <gmock/gmock.h>
 #include <vector>
 
-#include "../src/string/string.h"
+#include "../src/str/str.h"
 
-void stringIsPalindrome(blue_algorithm::string::Solution *s) {
+void stringIsPalindrome(blue_algorithm::str::Solution *s) {
     ASSERT_TRUE(s->isPalindrome(121));
     ASSERT_FALSE(s->isPalindrome(-121));
     ASSERT_FALSE(s->isPalindrome(10));
 }
 
-void testString() {
-    blue_algorithm::string::Solution s = blue_algorithm::string::Solution();
+void testStr() {
+    blue_algorithm::str::Solution s = blue_algorithm::str::Solution();
 
     stringIsPalindrome(&s);
 }

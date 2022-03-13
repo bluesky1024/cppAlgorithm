@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <vector>
 
-#include "string.h"
+#include "str.h"
 
-blue_algorithm::string::Solution::Solution(){
+blue_algorithm::str::Solution::Solution(){
 }
 
-blue_algorithm::string::Solution::~Solution(){
+blue_algorithm::str::Solution::~Solution(){
 }
 
 
-bool blue_algorithm::string::Solution::isPalindrome(int x) {
+bool blue_algorithm::str::Solution::isPalindrome(int x) {
     if ( x < 0 ) {
         return false;
     }
