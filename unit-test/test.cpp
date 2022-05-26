@@ -6,21 +6,15 @@
 #include "str_test.h"
 #include "tree_test.h"
 
-#define unit_test_suite_name BLUE_ALGORIGHT_UNIT_TEST
-
-TEST(unit_test_suite_name,first_demo) {
+TEST(first_demo,first_demo) {
     printf("hello my first gtest demo \n");
     ASSERT_TRUE(true);
 }
 
-TEST(unit_test_suite_name,array_test) {
-    testArray();
-}
-
-TEST(unit_test_suite_name,str_test) {
+TEST(str_test,str_test) {
     testStr();
 }
 
-TEST(unit_test_suite_name,tree_test) {
+TEST(tree_test,tree_test) {
     testTree();
 }

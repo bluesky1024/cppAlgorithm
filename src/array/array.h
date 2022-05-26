@@ -12,9 +12,6 @@ class Solution
 private:
     /* data */
 public:
-    Solution();
-    ~Solution();
-
     /* problem */
 
     // 移除元素 https://leetcode-cn.com/problems/remove-element/
@@ -23,7 +20,14 @@ public:
 
     // 搜索插入位置 https://leetcode-cn.com/problems/search-insert-position/
     int searchInsert(std::vector<int>& nums, int target);
-};   
+
+    // 获取k对最小和组合
+    int getMinSum(const std::vector<int> arr1, const std::vector<int> arr2, int k);
+
+    // 组合总和III https://leetcode.cn/problems/combination-sum-iii/
+    std::vector<std::vector<int>> combinationSum3(int k, int n);
+    void combinationSum3Sub(int k, int n, int cur, std::vector<int> curArr, std::vector<std::vector<int>> &res);
+};
 
     }
 }

@@ -7,5 +7,6 @@ project(${this})
 aux_source_directory(array array_src)
 aux_source_directory(str str_src)
 aux_source_directory(tree tree_src)
+aux_source_directory(dp dp_src)
 
-add_library(${this} STATIC ${array_src} ${str_src} ${tree_src})
+add_library(${this} STATIC ${array_src} ${str_src} ${tree_src} ${dp_src})

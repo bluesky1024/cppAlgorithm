@@ -3,13 +3,9 @@
 
 #include "array.h"
 
-blue_algorithm::array::Solution::Solution(){
-}
+namespace blue_algorithm::array {
 
-blue_algorithm::array::Solution::~Solution(){
-}
-
-int blue_algorithm::array::Solution::removeElementV1(std::vector<int>& nums, int val) {
+int Solution::removeElementV1(std::vector<int>& nums, int val) {
     std::vector<int>::iterator iter = nums.begin();
     for (;iter!=nums.end();) {
         if (*iter==val) {
@@ -21,7 +17,7 @@ int blue_algorithm::array::Solution::removeElementV1(std::vector<int>& nums, int
     return nums.size();
 }
 
-int blue_algorithm::array::Solution::removeElementV2(std::vector<int>& nums, int val) {
+int Solution::removeElementV2(std::vector<int>& nums, int val) {
     int n = nums.size();
     int left = 0;
     for (int right = 0; right < n; right++) {
@@ -33,7 +29,7 @@ int blue_algorithm::array::Solution::removeElementV2(std::vector<int>& nums, int
     return left;
 }
 
-int blue_algorithm::array::Solution::searchInsert(std::vector<int>& nums, int target) {
+int Solution::searchInsert(std::vector<int>& nums, int target) {
     int head = 0;
     int tail = nums.size()-1;
     for (;head<=tail;){
@@ -50,3 +46,26 @@ int blue_algorithm::array::Solution::searchInsert(std::vector<int>& nums, int ta
     }
     return head;
 }
+
+std::vector<std::vector<int>> Solution::combinationSum3(int k, int n) {
+    std::vector<std::vector<int>> res;
+    combinationSum3Sub(k, n, 1, {}, res);
+    return res;
+}
+
+void Solution::combinationSum3Sub(int k, int n, int cur, std::vector<int> curArr, std::vector<std::vector<int>> &res) {
+    if ((k == 0) && (n == 0)) {
+        res.push_back(curArr);
+    }
+    
+    if ((k == 0) || (n == 0) || (cur > n)) {
+        return;
+    }
+
+    combinationSum3Sub(k, n, cur+1, curArr, res);
+    curArr.push_back(cur);
+    combinationSum3Sub(k-1, n-cur, cur+1, curArr, res);
+    return;
+}
+
+} // blue_algorithm::array
