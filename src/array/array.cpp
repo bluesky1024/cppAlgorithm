@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <vector>
+#include <math.h>
 
 #include "array.h"
 
@@ -66,6 +67,36 @@ void Solution::combinationSum3Sub(int k, int n, int cur, std::vector<int> curArr
     curArr.push_back(cur);
     combinationSum3Sub(k-1, n-cur, cur+1, curArr, res);
     return;
+}
+
+std::vector<std::vector<int>> Solution::insert(std::vector<std::vector<int>>& intervals, std::vector<int>& newInterval) {
+    int left = newInterval[0];
+    int right = newInterval[1];
+    bool placed = false;
+    std::vector<std::vector<int>> ans;
+    for (const auto& interval: intervals) {
+        if (interval[0] > right) {
+            // 在插入区间的右侧且无交集
+            if (!placed) {
+                ans.push_back({left, right});
+                placed = true;                    
+            }
+            ans.push_back(interval);
+        }
+        else if (interval[1] < left) {
+            // 在插入区间的左侧且无交集
+            ans.push_back(interval);
+        }
+        else {
+            // 与插入区间有交集，计算它们的并集
+            left = std::min(left, interval[0]);
+            right = std::max(right, interval[1]);
+        }
+    }
+    if (!placed) {
+        ans.push_back({left, right});
+    }
+    return ans;
 }
 
 } // blue_algorithm::array

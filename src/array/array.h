@@ -27,6 +27,9 @@ public:
     // 组合总和III https://leetcode.cn/problems/combination-sum-iii/
     std::vector<std::vector<int>> combinationSum3(int k, int n);
     void combinationSum3Sub(int k, int n, int cur, std::vector<int> curArr, std::vector<std::vector<int>> &res);
+
+    // 插入区间 https://leetcode.cn/problems/insert-interval/
+    std::vector<std::vector<int>> insert(std::vector<std::vector<int>>& intervals, std::vector<int>& newInterval);
 };
 
     }
